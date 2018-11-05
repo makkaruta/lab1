@@ -7,15 +7,15 @@
 class NOTE
 {
 private:
-	char* firstname;
 	char* lastname;
-	char phone[PHMAX];
+    char* firstname;
+	char* phone;
 	int date[3];
 public:
 	NOTE();
-	char* getfirstname();
 	char* getlastname();
-	int getmon();
+    char* getfirstname();
+    int getmon();
 	void show();
 };
 
