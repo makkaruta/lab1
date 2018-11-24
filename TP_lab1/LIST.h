@@ -1,6 +1,7 @@
 #pragma once
 
 #include "NOTE.h"
+
 #define NN 2
 
 class LIST
@@ -9,13 +10,11 @@ private:
 	NOTE* notes;
 	int amount;
 	int i, j, k;
-	char* name1;
-	char* name2;
-	char* name3;
-	char* name4;
 public:
 	LIST();
-	void disp();
+	LIST(int d);
+	~LIST();
+    void show();
 	void dispmon(int m);
 	void srt();
     void add();

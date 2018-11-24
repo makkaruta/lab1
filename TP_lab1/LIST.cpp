@@ -1,26 +1,39 @@
 #include"LIST.h"
+#include "NOTE.h"
 #include <iostream>
 #include <cstring>
 #include <cstdlib>
+#include <stdio.h>
 using namespace std;
 
 LIST::LIST()
 {
-    amount = NN;
-	notes = new NOTE[amount];
+    cout << "Введите " << NN << " записей:" << endl;
+    notes = new NOTE[NN];
+    cout << "Список создан." << endl;
 }
 
-void LIST::disp()
+LIST::LIST(int d)
 {
-    if (amount == 0)
+    notes = (NOTE*)malloc(sizeof(NOTE)*NN);
+    for (int i = 0; i < NN; ++i)
     {
-        cout << "Записи отсутствуют." << endl;
+        notes[i] = *(new NOTE(i+1));
     }
-	for (i = 0; i < amount; i++)
-	{
-		cout << i+1 << ":" << endl;
-		notes[i].show();
-	}
+    cout << "Список по умолчанию создан." << endl;
+}
+
+LIST::~LIST()
+{
+	for (i = 0; i < NN; ++i)
+        delete &notes[i];
+    cout << "Список удалён." << endl;
+};
+
+void LIST::show()
+{
+	for (int i = 0; i < NN; ++i)
+		cout << i+1 << ":" << endl << *(notes + i);
 }
 
 void LIST::dispmon(int m)
@@ -32,13 +45,12 @@ void LIST::dispmon(int m)
     }
 	else
 	{
-	    for (i = 0; i < amount; i++)
+	    for (i = 0; i < NN; ++i)
         {
             if (notes[i].getmon() == m)
             {
                 mn++;
-                cout << mn << ":" << endl;
-                notes[i].show();
+                cout << mn << ":" << endl << notes[i];
             }
         }
         if (mn < 1)
@@ -48,13 +60,21 @@ void LIST::dispmon(int m)
 
 void LIST::srt()
 {
-	for (j = 0; j < (amount - 1); j++)
-		for (k = j + 1; k < amount; k++)
+
+    char* name1;
+	char* name2;
+	char* name3;
+	char* name4;
+	for (j = 0; j < (NN - 1); ++j)
+    {
+		for (k = j + 1; k < NN; ++k)
 		{
 			name1 = notes[j].getlastname();
 			name2 = notes[k].getlastname();
 			if (strcmp(name1, name2) > 0)
-				swap(notes[k], notes[j]);
+            {
+                swap(notes[k], notes[j]);
+            }
 			else if (strcmp(name1, name2) == 0)
 			{
 				name3 = notes[j].getfirstname();
@@ -63,43 +83,5 @@ void LIST::srt()
 					swap(notes[k], notes[j]);
 			}
 		}
-}
-
-void LIST::add()
-{
-    cout << "Введите новый элемент списка:" << endl;
-	NOTE temp;
-	notes = (NOTE*)realloc(notes, (amount+1)*sizeof(NOTE));
-	notes[amount] = temp;
-    ++amount;
-    cout << "Успешно." << endl;
-}
-
-void LIST::del(int num)
-{
-	if (amount == 0)
-	{
-		cout << "Нет ни одной записи для удаления." << endl;
-	}
-	else if((num > 0) && (amount > num-1))
-	{
-	    --num;
-	    --amount;
-	    if (amount == 0)
-        {
-            delete[] notes;
-            cout << "Успешно. Все записи удалены." << endl;
-        }
-        else
-        {
-            for (int d = num; d < amount; d++)
-                notes[d] = notes[d+1];
-            notes = (NOTE*)realloc(notes, amount*sizeof(NOTE));
-            cout << "Успешно." << endl;
-        }
-	}
-	else
-    {
-        cout << "Записи под таким номером не существует." << endl;
     }
 }

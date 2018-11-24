@@ -1,22 +1,25 @@
 # depslib dependency file v1.0
-1541439865 source:c:\users\user\documents\progtech\lab1\tp_lab1\list.cpp
+1543095408 source:c:\users\user\documents\progtech\lab1\tp_lab1\list.cpp
 	"LIST.h"
+	"NOTE.h"
 	<iostream>
 	<cstring>
 	<cstdlib>
+	<stdio.h>
 
-1541439865 c:\users\user\documents\progtech\lab1\tp_lab1\list.h
+1543091347 c:\users\user\documents\progtech\lab1\tp_lab1\list.h
 	"NOTE.h"
 
-1541436915 c:\users\user\documents\progtech\lab1\tp_lab1\note.h
+1543082227 c:\users\user\documents\progtech\lab1\tp_lab1\note.h
+	<iostream>
 
-1541437006 source:c:\users\user\documents\progtech\lab1\tp_lab1\main.cpp
+1543095408 source:c:\users\user\documents\progtech\lab1\tp_lab1\main.cpp
 	"LIST.h"
 	<iostream>
 	<windows.h>
 	<locale.h>
 
-1541439430 source:c:\users\user\documents\progtech\lab1\tp_lab1\note.cpp
+1543093785 source:c:\users\user\documents\progtech\lab1\tp_lab1\note.cpp
 	"NOTE.h"
 	<iostream>
 	<stdio.h>
