@@ -2,13 +2,12 @@
 
 #include "NOTE.h"
 
-#define NN 2
+#define NN 8
 
 class LIST
 {
 private:
 	NOTE* notes;
-	int amount;
 	int i, j, k;
 public:
 	LIST();

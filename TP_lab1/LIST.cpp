@@ -8,9 +8,9 @@ using namespace std;
 
 LIST::LIST()
 {
-    cout << "Введите " << NN << " записей:" << endl;
+    cout << "Введите " << NN << " записей:" << endl << endl;
     notes = new NOTE[NN];
-    cout << "Список создан." << endl;
+    cout << "\tСписок создан." << endl;
 }
 
 LIST::LIST(int d)
@@ -20,14 +20,14 @@ LIST::LIST(int d)
     {
         notes[i] = *(new NOTE(i+1));
     }
-    cout << "Список по умолчанию создан." << endl;
+    cout << "\tСписок по умолчанию создан." << endl;
 }
 
 LIST::~LIST()
 {
 	for (i = 0; i < NN; ++i)
         delete &notes[i];
-    cout << "Список удалён." << endl;
+    cout << "\tСписок удалён." << endl;
 };
 
 void LIST::show()
@@ -41,7 +41,7 @@ void LIST::dispmon(int m)
     int mn = 0;
     if (m > 12 || m < 1)
     {
-        cout << "Такого месяца не существует." << endl;
+        throw 301;
     }
 	else
 	{
@@ -54,7 +54,7 @@ void LIST::dispmon(int m)
             }
         }
         if (mn < 1)
-            cout << "Такие записи отсутствуют." << endl;
+            throw 302;
 	}
 }
 
@@ -84,4 +84,5 @@ void LIST::srt()
 			}
 		}
     }
+    cout << "Успешно!" << endl;
 }

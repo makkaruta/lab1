@@ -9,7 +9,7 @@ using namespace std;
 NOTE::NOTE()
 {
     cin >> *this;
-    cout << "Запись создана." << endl;
+    cout << "\tЗапись создана." << endl << endl;
 };
 
 NOTE::NOTE(int n)
@@ -91,34 +91,55 @@ case 8:
 case 0:
     break;
 default:
-    cout << "Ошибка, записей по умолчанию с таким номером не сущетсвует!" << endl;
+    lastname = "_";
+    firstname = "_";
+    phone = "00000000000";
+    date[0] = 0;
+    date[1] = 0;
+    date[2] = 0;
     }
     if (flag == true)
-        cout << "Запись по умолчанию создана." << endl;
+        cout << "\tЗапись по умолчанию создана." << endl;
+    else
+        cout << "\tПустая запись создана." << endl;
 };
+
+NOTE::NOTE(const NOTE &nt)
+{
+    lastname = new char[sizeof(nt.getlastname())];
+    lastname = nt.getlastname();
+    firstname = new char[sizeof(nt.getfirstname())];
+    firstname = nt.getfirstname();
+    phone = new char[sizeof(nt.getphone())];
+    phone = nt.getphone();
+    date[0] = nt.getday();
+    date[1] = nt.getmon();
+    date[2] = nt.getyear();
+    cout << "\tЗапись копирована." << endl;
+}
 
 NOTE::~NOTE()
 {
-    cout << "Запись удалена." << endl;
+    cout << "\tЗапись удалена." << endl;
 };
 
 void NOTE::setfirstname(char* fname) { firstname = fname; };
 void NOTE::setlastname(char* lname) { lastname = lname; };
 void NOTE::setphone(char* ph) { phone = ph; };
 void NOTE::setdate(int d, int m, int y) { date[0] = d; date[1] = m; date[2] = y; };
-char* NOTE::getlastname() { return lastname; }
-char* NOTE::getfirstname() { return firstname; }
-char* NOTE::getphone() { return phone; }
-int NOTE::getday() { return date[0]; }
-int NOTE::getmon() { return date[1]; }
-int NOTE::getyear() { return date[2]; }
+char* NOTE::getlastname() const { return lastname; }
+char* NOTE::getfirstname() const { return firstname; }
+char* NOTE::getphone() const { return phone; }
+int NOTE::getday() const { return date[0]; }
+int NOTE::getmon() const { return date[1]; }
+int NOTE::getyear() const { return date[2]; }
 
-ostream& operator <<(ostream& output, NOTE& pointer) // вывод
+ostream& operator <<(ostream& output, NOTE& pointer)
 {
-	cout << pointer.lastname << " " << pointer.firstname << endl << "Номер телефона: " << pointer.phone << endl << "Дата рождения: " << pointer.date[0] << "." << pointer.date[1] << "." << pointer.date[2] << endl;
+	cout << "\t" << pointer.lastname << " " << pointer.firstname << endl << "\tНомер телефона: " << pointer.phone << endl << "\tДата рождения: " << pointer.date[0] << "." << pointer.date[1] << "." << pointer.date[2] << endl;
 	return output;
 }
-void operator >> (istream& input, NOTE& pointer) // ввод
+void operator >> (istream& input, NOTE& pointer)
 {
 	pointer.lastname = new char[LMAX];
 	pointer.firstname = new char[FMAX];
