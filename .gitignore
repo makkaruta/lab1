@@ -1,0 +1,5 @@
+$ cat .gitignore
+bin/
+obj/
+TP_lab1/*.depend
+TP_lab1/*.layout

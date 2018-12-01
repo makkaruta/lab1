@@ -1,4 +1,4 @@
-#include"LIST.h"
+ï»¿#include"LIST.h"
 #include "NOTE.h"
 #include <iostream>
 #include <cstring>
@@ -8,9 +8,9 @@ using namespace std;
 
 LIST::LIST()
 {
-    cout << "Ââåäèòå " << NN << " çàïèñåé:" << endl << endl;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ " << NN << " Ð·Ð°Ð¿Ð¸ÑÐµÐ¹:" << endl << endl;
     notes = new NOTE[NN];
-    cout << "\tÑïèñîê ñîçäàí." << endl;
+    cout << "\tÐ¡Ð¿Ð¸ÑÐ¾Ðº ÑÐ¾Ð·Ð´Ð°Ð½." << endl;
 }
 
 LIST::LIST(int d)
@@ -20,14 +20,14 @@ LIST::LIST(int d)
     {
         notes[i] = *(new NOTE(i+1));
     }
-    cout << "\tÑïèñîê ïî óìîë÷àíèþ ñîçäàí." << endl;
+    cout << "\tÐ¡Ð¿Ð¸ÑÐ¾Ðº Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ ÑÐ¾Ð·Ð´Ð°Ð½." << endl;
 }
 
 LIST::~LIST()
 {
 	for (i = 0; i < NN; ++i)
         delete &notes[i];
-    cout << "\tÑïèñîê óäàë¸í." << endl;
+    cout << "\tÐ¡Ð¿Ð¸ÑÐ¾Ðº ÑƒÐ´Ð°Ð»Ñ‘Ð½." << endl;
 };
 
 void LIST::show()
@@ -84,5 +84,5 @@ void LIST::srt()
 			}
 		}
     }
-    cout << "Óñïåøíî!" << endl;
+    cout << "Ð£ÑÐ¿ÐµÑˆÐ½Ð¾!" << endl;
 }

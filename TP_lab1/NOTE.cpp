@@ -1,4 +1,4 @@
-#include "NOTE.h"
+ï»¿#include "NOTE.h"
 #include <iostream>
 #include <stdio.h>
 #include <cstdlib>
@@ -9,7 +9,7 @@ using namespace std;
 NOTE::NOTE()
 {
     cin >> *this;
-    cout << "\tÇàïèñü ñîçäàíà." << endl << endl;
+    cout << "\tÐ—Ð°Ð¿Ð¸ÑÑŒ ÑÐ¾Ð·Ð´Ð°Ð½Ð°." << endl << endl;
 };
 
 NOTE::NOTE(int n)
@@ -17,8 +17,8 @@ NOTE::NOTE(int n)
     bool flag = false;
     switch(n){
 case 1:
-    lastname = "Êîñòàâà";
-    firstname = "Äæîðäæè";
+    lastname = "ÐšÐ¾ÑÑ‚Ð°Ð²Ð°";
+    firstname = "Ð”Ð¶Ð¾Ñ€Ð´Ð¶Ð¸";
     phone = "89117563240";
     date[0] = 4;
     date[1] = 7;
@@ -26,8 +26,8 @@ case 1:
     flag = true;
     break;
 case 2:
-    lastname = "Äðåêñ";
-    firstname = "Êîðìàí";
+    lastname = "Ð”Ñ€ÐµÐºÑ";
+    firstname = "ÐšÐ¾Ñ€Ð¼Ð°Ð½";
     phone = "89117565753";
     date[0] = 21;
     date[1] = 3;
@@ -35,8 +35,8 @@ case 2:
     flag = true;
     break;
 case 3:
-    lastname = "Âåíñ";
-    firstname = "Ñàéìîí";
+    lastname = "Ð’ÐµÐ½Ñ";
+    firstname = "Ð¡Ð°Ð¹Ð¼Ð¾Ð½";
     phone = "89117567450";
     date[0] = 30;
     date[1] = 10;
@@ -44,8 +44,8 @@ case 3:
     flag = true;
     break;
 case 4:
-    lastname = "Êàóëèíñêèé";
-    firstname = "Êåâèí";
+    lastname = "ÐšÐ°ÑƒÐ»Ð¸Ð½ÑÐºÐ¸Ð¹";
+    firstname = "ÐšÐµÐ²Ð¸Ð½";
     phone = "89117564386";
     date[0] = 15;
     date[1] = 11;
@@ -53,8 +53,8 @@ case 4:
     flag = true;
     break;
 case 5:
-    lastname = "Ýñêàëëè";
-    firstname = "Ìàðè";
+    lastname = "Ð­ÑÐºÐ°Ð»Ð»Ð¸";
+    firstname = "ÐœÐ°Ñ€Ð¸";
     phone = "89117565462";
     date[0] = 27;
     date[1] = 11;
@@ -62,8 +62,8 @@ case 5:
     flag = true;
     break;
 case 6:
-    lastname = "Ëîðóí";
-    firstname = "Äàíèê";
+    lastname = "Ð›Ð¾Ñ€ÑƒÐ½";
+    firstname = "Ð”Ð°Ð½Ð¸Ðº";
     phone = "89117563745";
     date[0] = 4;
     date[1] = 1;
@@ -71,8 +71,8 @@ case 6:
     flag = true;
     break;
 case 7:
-    lastname = "Ãðåéð";
-    firstname = "Ñòåôàíè";
+    lastname = "Ð“Ñ€ÐµÐ¹Ñ€";
+    firstname = "Ð¡Ñ‚ÐµÑ„Ð°Ð½Ð¸";
     phone = "89117560455";
     date[0] = 2;
     date[1] = 4;
@@ -80,8 +80,8 @@ case 7:
     flag = true;
     break;
 case 8:
-    lastname = "Õàññå";
-    firstname = "Ôèëèïï";
+    lastname = "Ð¥Ð°ÑÑÐµ";
+    firstname = "Ð¤Ð¸Ð»Ð¸Ð¿Ð¿";
     phone = "89117562316";
     date[0] = 18;
     date[1] = 4;
@@ -99,9 +99,9 @@ default:
     date[2] = 0;
     }
     if (flag == true)
-        cout << "\tÇàïèñü ïî óìîë÷àíèþ ñîçäàíà." << endl;
+        cout << "\tÐ—Ð°Ð¿Ð¸ÑÑŒ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ ÑÐ¾Ð·Ð´Ð°Ð½Ð°." << endl;
     else
-        cout << "\tÏóñòàÿ çàïèñü ñîçäàíà." << endl;
+        cout << "\tÐŸÑƒÑÑ‚Ð°Ñ Ð·Ð°Ð¿Ð¸ÑÑŒ ÑÐ¾Ð·Ð´Ð°Ð½Ð°." << endl;
 };
 
 NOTE::NOTE(const NOTE &nt)
@@ -115,12 +115,12 @@ NOTE::NOTE(const NOTE &nt)
     date[0] = nt.getday();
     date[1] = nt.getmon();
     date[2] = nt.getyear();
-    cout << "\tÇàïèñü êîïèðîâàíà." << endl;
+    cout << "\tÐ—Ð°Ð¿Ð¸ÑÑŒ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð°." << endl;
 }
 
 NOTE::~NOTE()
 {
-    cout << "\tÇàïèñü óäàëåíà." << endl;
+    cout << "\tÐ—Ð°Ð¿Ð¸ÑÑŒ ÑƒÐ´Ð°Ð»ÐµÐ½Ð°." << endl;
 };
 
 void NOTE::setfirstname(char* fname) { firstname = fname; };
@@ -136,7 +136,7 @@ int NOTE::getyear() const { return date[2]; }
 
 ostream& operator <<(ostream& output, NOTE& pointer)
 {
-	cout << "\t" << pointer.lastname << " " << pointer.firstname << endl << "\tÍîìåð òåëåôîíà: " << pointer.phone << endl << "\tÄàòà ðîæäåíèÿ: " << pointer.date[0] << "." << pointer.date[1] << "." << pointer.date[2] << endl;
+	cout << "\t" << pointer.lastname << " " << pointer.firstname << endl << "\tÐÐ¾Ð¼ÐµÑ€ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°: " << pointer.phone << endl << "\tÐ”Ð°Ñ‚Ð° Ñ€Ð¾Ð¶Ð´ÐµÐ½Ð¸Ñ: " << pointer.date[0] << "." << pointer.date[1] << "." << pointer.date[2] << endl;
 	return output;
 }
 void operator >> (istream& input, NOTE& pointer)
@@ -144,12 +144,12 @@ void operator >> (istream& input, NOTE& pointer)
 	pointer.lastname = new char[LMAX];
 	pointer.firstname = new char[FMAX];
 	pointer.phone = new char [PHMAX];
-    cout << "Ôàìèëèÿ: ";					cin >> pointer.lastname;
-	cout << "Èìÿ: ";					    cin >> pointer.firstname;
-	cout << "Íîìåð òåëåôîíà: ";				cin >> pointer.phone;
-	cout << "Äàòà ðîæäåíèÿ: " << endl;
-	cout << "\tÄåíü: ";                     cin >> pointer.date[0];
-	cout << "\tÌåñÿö: ";                    cin >> pointer.date[1];
-	cout << "\tÃîä: ";                      cin >> pointer.date[2];
+    cout << "Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ: ";					cin >> pointer.lastname;
+	cout << "Ð˜Ð¼Ñ: ";					    cin >> pointer.firstname;
+	cout << "ÐÐ¾Ð¼ÐµÑ€ Ñ‚ÐµÐ»ÐµÑ„Ð¾Ð½Ð°: ";				cin >> pointer.phone;
+	cout << "Ð”Ð°Ñ‚Ð° Ñ€Ð¾Ð¶Ð´ÐµÐ½Ð¸Ñ: " << endl;
+	cout << "\tÐ”ÐµÐ½ÑŒ: ";                     cin >> pointer.date[0];
+	cout << "\tÐœÐµÑÑÑ†: ";                    cin >> pointer.date[1];
+	cout << "\tÐ“Ð¾Ð´: ";                      cin >> pointer.date[2];
 }
 
