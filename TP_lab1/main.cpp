@@ -32,35 +32,35 @@ int main(void)
 		}
 	}
 	cout << endl << "Подождите, идёт сортировка:" << endl;
-	(*lt).srt();
+	lt->srt();
 	while (1) {
 		cout << endl << "1: Вывод списка." << endl << "2: Перезаписать список." << endl << "3: Поиск по месяцу рождения." << endl << "4: Выход." << endl;
 		cin >> ch;
 		switch (ch) {
     case (1):
-        (*lt).show();
+        lt->show();
         break;
     case (2):
 		delete lt;
 		cout << endl;
 		lt = new LIST;
         cout << "Подождите, идёт сортировка:" << endl;
-        (*lt).srt();
+        lt->srt();
 		break;
     case (3):
 		cout << "Введите месяц: ";
         cin >> mon;
         try
         {
-            (*lt).dispmon(mon);
+            lt->dispmon(mon);
         }
         catch(int error)
         {
             switch(error) {
-            case 301:
+            case ERROR_301:
                 cout << endl << "\tТакого месяца не существует." << endl;
                 break;
-            case 302:
+            case ERROR_302:
                 cout << endl << "\tТакие записи отсутствуют." << endl;
                 break;
             default:

@@ -4,6 +4,10 @@
 #define PHMAX 11
 #define FMAX 20
 #define LMAX 20
+#define DAY_MON_YEAR 3
+#define DAY 0
+#define MON 1
+#define YEAR 2
 
 using namespace std;
 
@@ -13,7 +17,7 @@ private:
 	char* lastname;
     char* firstname;
 	char* phone;
-	int date[3];
+	int date[DAY_MON_YEAR];
 public:
     NOTE();
     NOTE(int n);

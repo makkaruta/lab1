@@ -3,6 +3,10 @@
 #include "NOTE.h"
 
 #define NN 8
+#define JANUARY 1
+#define DECEMBER 12
+#define ERROR_301 301
+#define ERROR_302 302
 
 class LIST
 {

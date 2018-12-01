@@ -39,9 +39,9 @@ void LIST::show()
 void LIST::dispmon(int m)
 {
     int mn = 0;
-    if (m > 12 || m < 1)
+    if (m > DECEMBER || m < JANUARY)
     {
-        throw 301;
+        throw ERROR_301;
     }
 	else
 	{
@@ -54,7 +54,7 @@ void LIST::dispmon(int m)
             }
         }
         if (mn < 1)
-            throw 302;
+            throw ERROR_302;
 	}
 }
 
